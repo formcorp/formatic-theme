@@ -87,7 +87,6 @@
               border-color: @input-focus-border-color;
             }
           }
-
           /* Styled radio buttons */
           &[type="radio"] {
             display: none;
@@ -219,6 +218,14 @@
           }
         }
 
+        /* Select boxes */
+        select.fc-fieldinput {
+          border: 1px solid @input-border-color;
+          border-radius: @input-text-border-radius;
+          padding: @input-text-padding;
+          height: auto;
+        }
+
         .fc-fieldgroup {
           /* Success and error box */
           .fc-success-box,
@@ -238,7 +245,8 @@
 
         /* Fields that have been successfully validated */
         &.fc-field-success {
-          input.fc-fieldinput {
+          input.fc-fieldinput,
+          select.fc-fieldinput {
             border: 1px solid @success-background-color;
           }
 
@@ -259,7 +267,8 @@
         }
 
         &.fc-error {
-          input.fc-fieldinput {
+          input.fc-fieldinput,
+          select.fc-fieldinput {
             border: 1px solid @error-background-color;
           }
 
@@ -341,6 +350,22 @@
       text-shadow: none;
       color: @button-success-font-color;
       border-color: @button-success-border-color;
+    }
+  }
+
+  /* Auto suggest widget */
+  .fc-auto-suggest {
+    background: @auto-suggest-background;
+  }
+
+  /* Tables */
+  .fc-table {
+    th, td {
+      padding: @table-cell-padding;
+    }
+
+    &.fc-summary {
+      margin: @table-summary-margin;
     }
   }
 }
