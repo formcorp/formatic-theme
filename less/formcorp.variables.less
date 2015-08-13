@@ -6,14 +6,11 @@
 @show-section-border: true;
 
 /* Colors */
-@section-border-color: #96989b;
-@section-title-border-color: #c8cbd4;
-@success-background-color: #48ab6c;
-@error-background-color: #e0001b;
-@input-border-color: #a9afb7;
-@field-help-color: #96989b;
+@white: #fff;
 
 /* Sections */
+@section-border-color: #96989b;
+@section-title-border-color: #c8cbd4;
 @section-border: 1px solid @section-border-color;
 @section-padding: 25px 35px;
 @section-margin: 50px 0;
@@ -26,6 +23,7 @@
 @field-margin: 20px 0;
 @field-rich-text-margin: 0 0 -15px 0;
 @field-label-padding: 0 0 15px 0;
+@field-help-color: #96989b;
 @field-help-link-color: @field-help-color;
 
 /* Field radio buttons */
@@ -37,6 +35,8 @@
 @radio-label-margin-left: 10px;
 
 /* Field text inputs */
+@input-border-color: #a9afb7;
+@input-focus-border-color: #777;
 @input-text-border-radius: 0;
 @input-text-padding: 12px 20px;
 
@@ -48,3 +48,26 @@
 @button-border-radius: 0;
 @button-success-font-color: #fff;
 @button-success-border-color: #068032;
+
+/* Success/error */
+@success-background-color: #48ab6c;
+@error-background-color: #e0001b;
+@success-circle-size: 30px;
+@success-circle-right: -(@success-circle-size / 2);
+@success-circle-border-radius: (@success-circle-size / 2);
+
+@error-circle-size: @success-circle-size;
+@error-circle-right: @success-circle-right;
+@error-circle-border-radius: @success-circle-border-radius;
+
+/* Repeatable fields */
+@repeatable-rows-margin: 0 0 50px 0;
+@repeatable-rows-button-margin: 10px 10px 15px 10px;
+@repeatable-rows-button-hover-background-color: #efefef;
+@repeatable-rows-button-hover-border-color: #6A6B6D;
+
+/* Pagination */
+@pagination-button-padding: 15px 20px;
+@pagination-button-background-color: @section-border-color;
+@pagination-button-text-color: @white;
+@pagination-button-min-width: 350px;

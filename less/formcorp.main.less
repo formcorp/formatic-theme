@@ -82,6 +82,10 @@
             &[placeholder] {
               font-style: italic;
             }
+
+            &:focus {
+              border-color: @input-focus-border-color;
+            }
           }
 
           /* Styled radio buttons */
@@ -244,10 +248,10 @@
 
               /* Success tick */
               .fc-success-box {
-                width: 30px;
-                height: 30px;
-                right: -15px;
-                border-radius: 15px;
+                width: @success-circle-size;
+                height: @success-circle-size;
+                right: @success-circle-right * 1px;
+                border-radius: @success-circle-border-radius * 1px;
                 background: @success-background-color url(../images/success-tick.png) center center no-repeat;
               }
             }
@@ -266,10 +270,10 @@
               /* Error tick */
               .fc-error-box {
                 background: @error-background-color url(../images/error-cross.png) center center no-repeat;
-                width: 30px;
-                height: 30px;
-                right: -15px;
-                border-radius: 15px;
+                width: @error-circle-size;
+                height: @error-circle-size;
+                right: @error-circle-right * 1px;
+                border-radius: @error-circle-border-radius * 1px;
               }
             }
           }
@@ -278,14 +282,49 @@
         /* Repeatable styles */
         .fc-repeatable {
           &.fc-repeatable-in-dom {
+            .fc-repeatable-rows {
+              margin: @repeatable-rows-margin;
+            }
+
             .fc-link {
               a {
                 border: @section-border;
                 padding: @section-padding;
+                border-radius: 0;
+                display: block;
+                padding-top: 0;
+                padding-bottom: 0;
+                text-align: left;
+                margin: @repeatable-rows-button-margin;
+
+                &:hover {
+                  background: @repeatable-rows-button-hover-background-color;
+                  border-color: @repeatable-rows-button-hover-border-color;
+                }
               }
             }
           }
         }
+      }
+    }
+
+    /* Pagination */
+    .fc-pagination {
+      /* Submit application button */
+      .fc-submit {
+        input[type="submit"] {
+          background: @success-background-color;
+          color: @pagination-button-text-color;
+          padding: @pagination-button-padding;
+          text-transform: uppercase;
+          border-radius: 0;
+          min-width: @pagination-button-min-width;
+        }
+      }
+
+      /* Previous page button */
+      .fc-prev-page {
+        display: none;
       }
     }
   }
