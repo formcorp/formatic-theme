@@ -6,21 +6,31 @@
 @show-section-border: true;
 
 /* Colors */
-@section-border: 1px solid #96989b;
+@section-border-color: #96989b;
+@section-title-border-color: #c8cbd4;
 @success-background-color: #48ab6c;
 
 /* Sections */
+@section-border: 1px solid @section-border-color;
 @section-padding: 25px 35px;
 @section-margin: 50px 0;
 @section-title-font-size: 18pt;
 @section-title-font-bold: false;
-@section-title-border-bottom: 1px solid #c8cbd4;
+@section-title-border-bottom: 1px solid @section-title-border-color;
 @section-desc-margin: 15px 0 0 0;
 
 /* Fields */
 @field-label-padding: 15px 0;
 @field-help-color: #96989b;
 @field-help-link-color: @field-help-color;
+
+/* Field radio buttons */
+@radio-border-color: @section-title-border-color;
+@radio-border-radius: 9px;
+@radio-size: 19px;
+@radio-checked-inner-size: 11px;
+@radio-checked-inner-border-radius: 6px;
+@radio-label-margin-left: 10px;
 
 /* Buttons */
 @button-background-color: #eeeef2;

@@ -24,9 +24,7 @@
       }
     }
 
-    /**
-     * Page sections
-     */
+    /* Page sections */
     .fc-section {
       margin: @section-margin;
 
@@ -58,6 +56,56 @@
           a {
             color: @field-help-link-color;
             text-decoration: underline;
+          }
+        }
+
+        input.fc-fieldinput {
+
+          /* Styled radio buttons */
+          &[type="radio"] {
+            display: none;
+
+            + label {
+              span, em {
+                float: left;
+              }
+
+              span {
+                display: inline-block;
+                width: @radio-size;
+                height: @radio-size;
+                background: #fff;
+                border-radius: @radio-border-radius;
+                border: 1px solid @radio-border-color;
+                cursor: pointer;
+
+                i {
+                  display: none;
+                }
+              }
+
+              em {
+                font-style: normal;
+                line-height: @radio-size;
+                margin-left: @radio-label-margin-left;
+                cursor: pointer;
+              }
+            }
+
+            &:checked {
+              + label span {
+                border-color: @success-background-color;
+                padding: 3px;
+
+                i {
+                  display: block;
+                  width: @radio-checked-inner-size;
+                  height: @radio-checked-inner-size;
+                  background: @success-background-color;
+                  border-radius: @radio-checked-inner-border-radius;
+                }
+              }
+            }
           }
         }
       }
