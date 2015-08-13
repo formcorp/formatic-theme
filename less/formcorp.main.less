@@ -215,9 +215,63 @@
           }
         }
 
-        &.validated {
+        .fc-fieldgroup {
+          /* Success and error box */
+          .fc-success-box,
+          .fc-error-box {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            transition: width ease-in-out .15s, height ease-in-out .15s, right ease-in-out .15s;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+          }
+        }
+
+        /* Fields that have been successfully validated */
+        &.fc-field-success {
           input.fc-fieldinput {
             border: 1px solid @success-background-color;
+          }
+
+          .fc-fieldgroup {
+            .fc-field-element-container {
+              position: relative;
+
+              /* Success tick */
+              .fc-success-box {
+                width: 30px;
+                height: 30px;
+                right: -15px;
+                border-radius: 15px;
+                background: @success-background-color url(../images/success-tick.png) center center no-repeat;
+              }
+            }
+          }
+        }
+
+        &.fc-error {
+          input.fc-fieldinput {
+            border: 1px solid @error-background-color;
+          }
+
+          .fc-fieldgroup {
+            .fc-field-element-container {
+              position: relative;
+
+              /* Error tick */
+              .fc-error-box {
+                background: @error-background-color url(../images/error-cross.png) center center no-repeat;
+                width: 30px;
+                height: 30px;
+                right: -15px;
+                border-radius: 15px;
+              }
+            }
           }
         }
       }
