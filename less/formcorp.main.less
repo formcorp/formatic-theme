@@ -376,4 +376,22 @@
       margin-bottom: 15px;
     }
   }
+
+  /* Phone queries */
+  @media only screen and (max-width: 479px) {
+    .fc-button,
+    .fc-field,
+    .fc-page .fc-pagination .fc-submit input[type="submit"] {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .fc-page {
+      .fc-pagination {
+        .fc-submit {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
