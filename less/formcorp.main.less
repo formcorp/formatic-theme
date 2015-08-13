@@ -1,3 +1,81 @@
 #formcorp-form {
   .reset();
+
+  font-family: @font-family;
+
+  /* Page stylings */
+  .fc-page {
+    & when (@show-stage-title = false) {
+      > h1 {
+        display: none;
+      }
+    }
+
+    & when (@show-page-title = false) {
+      > h2 {
+        display: none;
+      }
+    }
+
+    & when (@show-section-border = true) {
+      .fc-section {
+        border: @section-border;
+        padding: @section-padding;
+      }
+    }
+
+    /**
+     * Page sections
+     */
+    .fc-section {
+      margin: @section-margin;
+
+      > p {
+        font-weight: bold;
+        margin: @section-desc-margin;
+      }
+
+      h4 {
+        font-size: @section-title-font-size;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: @section-title-border-bottom;
+
+        & when (@section-title-font-bold = false) {
+          font-weight: normal;
+        }
+      }
+
+      .fc-field {
+        .fc-fieldcontainer > label {
+          font-weight: normal;
+          margin: @field-label-padding;
+        }
+
+        .fc-help {
+          color: @field-help-color;
+
+          a {
+            color: @field-help-link-color;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .fc-button {
+    background: @button-background-color;
+    border: @button-border;
+    border-radius: @button-border-radius;
+    width: @button-width;
+    margin: @button-margin;
+
+    &.checked {
+      background-color: @success-background-color;
+      text-shadow: none;
+      color: @button-success-font-color;
+      border-color: @button-success-border-color;
+    }
+  }
 }
