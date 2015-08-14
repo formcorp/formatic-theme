@@ -48,10 +48,12 @@
       .fc-field {
         margin: @field-margin;
 
+        /* Rich text area styling */
         &.fc-field-richTextArea {
           margin: @field-rich-text-margin;
         }
 
+        /* Field label */
         .fc-fieldcontainer > label {
           font-weight: normal;
           margin: @field-label-padding;
@@ -64,6 +66,31 @@
           a {
             color: @field-help-link-color;
             text-decoration: underline;
+          }
+        }
+
+        /* Content radio list styling */
+        &.fc-field-contentRadioList {
+          .fc-content-radio-item {
+
+            .fc-content-icon {
+              margin: @content-radio-list-icon-margin;
+
+              i.fa {
+                font-size: @content-radio-list-icon-size;
+              }
+            }
+
+            .fc-button {
+              margin-right: 0;
+            }
+          }
+
+          /* 3 column layout */
+          .fc-col-3 {
+            .fc-content-radio-item {
+              margin-right: 2%;
+            }
           }
         }
 
