@@ -408,15 +408,16 @@
   @media only screen and (max-width: 479px) {
     .fc-button,
     .fc-field,
-    .fc-page .fc-pagination .fc-submit input[type="submit"] {
-      width: 100%;
-      min-width: 0;
+    .fc-page .fc-pagination .fc-submit input[type="submit"],
+    .fc-field-contentRadioList .fc-col {
+      width: 100% !important;
+      min-width: 0 !important;
     }
 
     .fc-page {
       .fc-pagination {
         .fc-submit {
-          width: 100%;
+          width: 100% !important;
         }
       }
     }
