@@ -115,11 +115,17 @@
             margin-top: 30px;
 
             .fc-col {
+              min-height: @greenid-min-height;
               border-radius: 0;
+              border: @greenid-option-border-width @greenid-option-border-colour solid;
 
               .fc-content-content {
                 padding: @greenid-package-content-padding;
               }
+            }
+
+            .fc-content-desc {
+              margin: @greenid-option-content-margin;
             }
 
             .progress {
@@ -131,10 +137,20 @@
             }
 
             .fc-content-title {
-              padding: 7px;
-              margin-bottom: 10px;
+              padding: @greenid-content-title-padding;
+              margin-bottom: @greenid-field-spacing;
+              font-weight: normal;
+              border-bottom: @greenid-option-border-width solid @greenid-option-border-colour;
             }
 
+            // Style the select buttons
+            .fc-option-buttons {
+              .fc-button {
+                width: 100%;
+              }
+            }
+
+            // Verified columns
             .fc-verified {
               border: 1px @greenid-success-border-color solid;
 
@@ -152,6 +168,7 @@
             }
           }
 
+          // Green ID header summary
           .fc-green-id-header-summary {
             margin-bottom: @greenid-header-summary-margin-bottom;
             background: @greenid-header-summary-background-colour;
@@ -529,7 +546,9 @@
     .fc-button,
     .fc-field,
     .fc-page .fc-pagination .fc-submit input[type="submit"],
-    .fc-field-contentRadioList .fc-col {
+    .fc-field-contentRadioList .fc-col,
+    .fc-field-greenIdVerification .fc-col,
+    .fc-green-field {
       width: 100% !important;
       min-width: 0 !important;
     }
