@@ -1,6 +1,10 @@
 #formcorp-form {
   .reset();
 
+  p, h1, h2, h3, h4, div.alert {
+    margin-bottom: @special-element-margin-bottom;
+  }
+
   font-family: @font-family;
 
   /* Page stylings */
@@ -70,7 +74,8 @@
         }
 
         /* Content radio list styling */
-        &.fc-field-contentRadioList {
+        &.fc-field-contentRadioList,
+        &.fc-field-greenIdVerification {
           .fc-content-radio-item {
 
             .fc-content-icon {
@@ -90,6 +95,111 @@
           .fc-col-3 {
             .fc-content-radio-item {
               margin-right: 2%;
+            }
+          }
+        }
+
+        // Style greenID verification
+        &.fc-field-greenIdVerification {
+          .fc-greenid-successfully-verified {
+            color: @success-background-color;
+          }
+
+          &.fc-is-verified {
+            .fc-greenid-options {
+              display: none;
+            }
+          }
+
+          .fc-greenid-verification-packages {
+            margin-top: 30px;
+
+            .fc-col {
+              border-radius: 0;
+
+              .fc-content-content {
+                padding: @greenid-package-content-padding;
+              }
+            }
+
+            .progress {
+              margin: 20px 0 30px 0;
+
+              .progress-bar-success {
+                background: @success-background-color
+              }
+            }
+
+            .fc-content-title {
+              padding: 7px;
+              margin-bottom: 10px;
+            }
+
+            .fc-verified {
+              border: 1px @greenid-success-border-color solid;
+
+              .fc-successfully-verified {
+                color: @success-background-color;
+                padding: @greenid-verify-success-padding;
+                display: block;
+                text-align: center;
+              }
+
+              .fc-content-title {
+                color: @greenid-verify-success-title-color;
+                background: @success-background-color;
+              }
+            }
+          }
+
+          .fc-green-id-header-summary {
+            margin-bottom: @greenid-header-summary-margin-bottom;
+            background: @greenid-header-summary-background-colour;
+            border-radius: @greenid-header-summary-border-radius;
+            padding: @greenid-header-summary-padding;
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+
+          .fc-greenid-options {
+            background: @greenid-options-background-colour;
+            padding: @greenid-options-padding;
+            border-radius: @greenid-options-border-radius;
+
+            .fc-header {
+              margin-bottom: @greenid-heading-margin-bottom;
+            }
+
+            & > p {
+              margin-bottom: @greenid-paragraph-margin-bottom;
+            }
+
+            .fc-green-field {
+              width: 48.75%;
+              margin-top: @greenid-field-spacing;
+              margin-bottom: @greenid-field-spacing;
+              margin-right: 0;
+            }
+
+            .fc-green-field:nth-child(odd) {
+              margin-right: 2.5% !important;
+            }
+
+            .tos {
+              width: 100%;
+              margin: @greenid-tos-margin;
+
+              & > input[type="checkbox"] {
+                margin-top: 0;
+              }
+            }
+
+            .fc-passport {
+              .passport-number {
+                width: 100%;
+              }
             }
           }
         }
@@ -365,7 +475,7 @@
     }
   }
 
-  .fc-button {
+  .fc-button, a.fc-btn {
     background: @button-background-color;
     border: @button-border;
     border-radius: @button-border-radius;
@@ -377,6 +487,16 @@
       text-shadow: none;
       color: @button-success-font-color;
       border-color: @button-success-border-color;
+    }
+  }
+
+  a.fc-btn {
+    width: auto;
+    padding: @link-button-padding;
+    color: @link-button-color;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 

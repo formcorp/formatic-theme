@@ -1,1 +1,1 @@
-lessc less/formcorp.less ../compiled/formcorp.compiled.css
+lessc %~dp0/less/formcorp.less %~dp0/../compiled/formcorp.compiled.css
