@@ -17,6 +17,7 @@
 @section-title-border-color: #c8cbd4;
 @section-border: 1px solid @section-border-color;
 @section-padding: 25px 35px;
+@section-fieldgroup-padding: 0;
 @section-margin: 50px 0;
 @section-title-font-size: 18pt;
 @section-title-font-bold: false;
@@ -47,23 +48,25 @@
 /* Select */
 @input-select-padding: 12px 20px 11px 20px;
 
-/* Buttons */
-@button-background-color: #eeeef2;
-@button-border: 1px solid #a9afb7;
-@button-width: 45%;
-@button-margin: 0 25px 25px 0;
-@button-border-radius: 0;
-@button-success-font-color: #fff;
-@button-success-border-color: #068032;
-@link-button-color: #231f20;
-@link-button-padding: 14px 50px;
-
 /* Success/error */
 @success-background-color: #48ab6c;
 @error-background-color: #e0001b;
 @success-circle-size: 30px;
 @success-circle-right: -(@success-circle-size / 2);
 @success-circle-border-radius: (@success-circle-size / 2);
+@success-font-color: @white;
+@error-font-color: @white;
+
+/* Buttons */
+@button-background-color: #eeeef2;
+@button-border: 1px solid #a9afb7;
+@button-width: 45%;
+@button-margin: 0 25px 25px 0;
+@button-border-radius: 0;
+@button-success-font-color: @success-font-color;
+@button-success-border-color: #068032;
+@link-button-color: #231f20;
+@link-button-padding: 14px 50px;
 
 @error-circle-size: @success-circle-size;
 @error-circle-right: @success-circle-right;
@@ -113,3 +116,13 @@
 @greenid-content-title-padding: 12px;
 @greenid-option-content-margin: 30px 0;
 @greenid-min-height: 260px;
+
+// Modal settings
+@modal-background-color: @white;
+@modal-border-radius: 0;
+@modal-border-padding: 15px 25px;
+@modal-header-padding: 6px 20px;
+@modal-width-desktop: 600px;
+@modal-width-mobile: 96%;
+@modal-margin-left: -(@modal-width-desktop / 2);
+@modal-footer-button-padding: 6px 25px;

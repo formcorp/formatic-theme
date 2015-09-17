@@ -5,6 +5,10 @@
     margin-bottom: @special-element-margin-bottom;
   }
 
+  p {
+    line-height: 1.72857143 !important;
+  }
+
   font-family: @font-family;
 
   /* Page stylings */
@@ -381,6 +385,8 @@
         }
 
         .fc-fieldgroup {
+          padding: @section-fieldgroup-padding;
+
           /* Success and error box */
           .fc-success-box,
           .fc-error-box {
@@ -538,6 +544,48 @@
     > div {
       margin-right: 1%;
       margin-bottom: 15px;
+    }
+  }
+
+  // Modal
+  .fc-modal {
+    .modal-dialog {
+      background: @modal-background-color;
+      border-radius: @modal-border-radius;
+      width: @modal-width-desktop;
+      margin-left: @modal-margin-left;
+
+      .modal-header {
+        background: @success-background-color;
+        color: @success-font-color;
+        padding: @modal-header-padding;
+
+        h2 {
+          margin: 0;
+        }
+      }
+
+      .modal-body {
+        padding: @modal-border-padding;
+      }
+
+      .modal-footer {
+        padding: @modal-border-padding;
+
+        .btn {
+          display: inline-block;
+          padding: @modal-footer-button-padding;
+          background: @success-background-color;
+          color: @button-success-font-color;
+          border-radius: @button-border-radius;
+          border: medium none;
+
+          &.btn-danger {
+            background: @error-background-color;
+            color: @error-font-color;
+          }
+        }
+      }
     }
   }
 
