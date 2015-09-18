@@ -64,6 +64,15 @@
         /* Rich text area styling */
         &.fc-field-richTextArea {
           margin: @field-rich-text-margin;
+
+          ol {
+            margin: 1em 0;
+            padding: 0 0 0 40px;
+          }
+
+          ol li {
+            list-style-type: decimal;
+          }
         }
 
         /* Field label */
@@ -266,6 +275,13 @@
                 width: 100%;
               }
             }
+          }
+        }
+
+        // Block
+        .fc-block {
+          label {
+            min-width: 90%;
           }
         }
 
@@ -593,6 +609,10 @@
 
   // Modal
   .fc-modal {
+    &:before {
+      opacity: @modal-opacity;
+    }
+
     .modal-dialog {
       background: @modal-background-color;
       border-radius: @modal-border-radius;
