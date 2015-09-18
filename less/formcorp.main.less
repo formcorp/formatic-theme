@@ -82,6 +82,39 @@
           }
         }
 
+        // E-mail verification
+        &.fc-field-emailVerification {
+          // In line verification
+          .fc-verify-inline {
+            .fc-verify-email-input-code {
+              float: left;
+              width: @email-verification-box-inline-width;
+              margin-right: @email-verification-separator-width;
+            }
+
+            .fc-verify-email-button, .fc-send-email {
+              float: left;
+              margin: 0 @email-verification-separator-width 0 0;
+            }
+
+            .fc-loading {
+              display: none;
+            }
+
+            &.loading {
+              input[type="text"] {
+                background: url(images/ball-triangle.svg) no-repeat right 12px top 8px;
+              }
+            }
+          }
+        }
+
+        // Style buttons
+        .fc-btn {
+          border-radius: 0;
+          padding: @button-padding;
+        }
+
         /* Content radio list styling */
         &.fc-field-contentRadioList,
         &.fc-field-greenIdVerification {
@@ -425,7 +458,7 @@
                 height: @success-circle-size;
                 right: @success-circle-right * 1px;
                 border-radius: @success-circle-border-radius * 1px;
-                background: @success-background-color url(../base/images/success-tick.png) center center no-repeat;
+                background: @success-background-color url(images/success-tick.png) center center no-repeat;
               }
             }
           }
@@ -443,7 +476,7 @@
 
               /* Error tick */
               .fc-error-box {
-                background: @error-background-color url(../base/images/error-cross.png) center center no-repeat;
+                background: @error-background-color url(images/error-cross.png) center center no-repeat;
                 width: @error-circle-size;
                 height: @error-circle-size;
                 right: @error-circle-right * 1px;
