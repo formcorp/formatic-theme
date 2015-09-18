@@ -5,7 +5,7 @@
     margin-bottom: @special-element-margin-bottom;
   }
 
-  p {
+  p, input[type="checkbox"] + label em, input[type="radio"] + label em {
     line-height: 1.72857143 !important;
   }
 
@@ -259,7 +259,7 @@
                 float: left;
               }
 
-              span {
+              span:first-child {
                 border-color: #fff;
                 padding: 3px;
                 display: inline-block;
@@ -306,11 +306,11 @@
             display: none;
 
             + label {
-              span, em {
+              span:first-child, em {
                 float: left;
               }
 
-              span {
+              span:first-child {
                 border-color: #fff;
                 padding: 3px;
                 display: inline-block;
