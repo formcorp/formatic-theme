@@ -76,9 +76,31 @@
         }
 
         /* Field label */
-        .fc-fieldcontainer > label {
-          font-weight: normal;
-          margin: @field-label-padding;
+        .fc-fieldcontainer {
+          &> label {
+            font-weight: normal;
+            margin: @field-label-padding;
+
+            &>.fc-help-link {
+              background: @field-help-background;
+              color: @field-help-color;
+              padding: @field-help-padding;
+              font-size: @field-help-font-size;
+              border-radius: @field-help-border-radius;
+
+              & when (@field-help-font-bold = true) {
+                font-weight: bold;
+              }
+
+              &:hover, :active {
+                text-decoration: none;
+              }
+            }
+          }
+
+          .fc-error-text {
+            position: absolute;
+          }
         }
 
         /* Field help text */
@@ -534,6 +556,13 @@
             }
           }
         }
+
+        // Repeatable iterators
+        &.fc-field-repeatableIterator {
+          .fc-fieldgroup {
+            padding-bottom: 0;
+          }
+        }
       }
     }
 
@@ -653,8 +682,8 @@
     }
   }
 
-  /* Phone queries */
-  @media only screen and (max-width: 479px) {
+  // Phone queries
+  @media only screen and (max-width: 699px) {
     .fc-button,
     .fc-field,
     .fc-page .fc-pagination .fc-submit input[type="submit"],
