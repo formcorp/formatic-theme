@@ -96,6 +96,52 @@
       .fc-field {
         margin: @field-margin;
 
+        // 2 columns
+        &.two-col {
+          width: 48.75%;
+          float: left;
+
+          &.first {
+            clear: both;
+            margin-right: 2.5%;
+          }
+
+          &.last {
+            & + .fc-field {
+              clear: both;
+            }
+          }
+        }
+
+        // Bold labels
+        &.bold {
+          .fc-fieldcontainer {
+            > label {
+              font-weight: bold;
+            }
+          }
+        }
+
+        // 3 column layout
+        &.three-col {
+          width: 33.33333%;
+          float: left;
+
+          &.first {
+            clear: both;
+          }
+
+          &.last {
+            & + .fc-field {
+              clear: both;
+            }
+          }
+
+          &.two-thirds {
+            width: 66.66666667%;
+          }
+        }
+
         /* Rich text area styling */
         &.fc-field-richTextArea {
           margin: @field-rich-text-margin;
@@ -107,6 +153,56 @@
 
           ol li {
             list-style-type: decimal;
+          }
+        }
+
+        // Option table
+        &.fc-field-optionTable {
+          // Ensure the tickbox gets rendered correctly
+          .fc-field-element-container {
+            padding-right: 20px;
+          }
+
+          // Style the table
+          .fc-table {
+            border-radius: 0;
+            width: 100%;
+
+            &:before {
+              background: @fc-option-table-header-color;
+            }
+
+            th {
+              &:before {
+                background: @fc-option-table-th-header-color;
+              }
+
+              // Bold the header text
+              & when (@fc-option-table-th-bold-text = true) {
+                font-weight: bold;
+              }
+              & when (@fc-option-table-th-bold-text = false) {
+                font-weight: normal;
+              }
+
+              // Convert the header text to uppercase
+              & when (@fc-option-table-th-uppercase-text = true) {
+                text-transform: uppercase;
+              }
+              & when (@fc-option-table-th-uppercase-text = false) {
+                text-transform: none;
+              }
+            }
+
+            th, td {
+              text-align: center;
+            }
+
+            .fc-option-buttons {
+              .fc-button {
+                width: 100%;
+              }
+            }
           }
         }
 
@@ -196,7 +292,6 @@
         &.fc-field-contentRadioList,
         &.fc-field-greenIdVerification {
           .fc-content-radio-item {
-
             .fc-content-icon {
               margin: @content-radio-list-icon-margin;
 
@@ -216,10 +311,30 @@
               margin-right: 2%;
             }
           }
+
+          .fc-col-4 {
+            .fc-content-radio-item {
+              margin-right: 2%;
+            }
+          }
+        }
+
+        // Content radio list specific stylings
+        &.fc-field-contentRadioList {
+          .fc-content-radio-item {
+            margin-bottom: @fc-content-radio-list-margin-bottom;
+
+            .fc-content-title {
+              background: @content-radio-list-background;
+              color: @content-radio-list-color;
+              border-radius: 0;
+            }
+          }
         }
 
         // Style greenID verification
-        &.fc-field-greenIdVerification {
+        &.fc-field-greenIdVerification,
+        &.fc-field-contentRadioList {
           .fc-greenid-successfully-verified {
             color: @success-background-color;
           }
@@ -230,42 +345,43 @@
             }
           }
 
+          .fc-col {
+            min-height: @greenid-min-height;
+            border-radius: 0;
+            border: @greenid-option-border-width @greenid-option-border-colour solid;
+
+            .fc-content-content {
+              padding: @greenid-package-content-padding;
+            }
+          }
+
+          .fc-content-desc {
+            margin: @greenid-option-content-margin;
+          }
+
+          .fc-content-title {
+            padding: @greenid-content-title-padding;
+            margin-bottom: @greenid-field-spacing;
+            font-weight: normal;
+            border-bottom: @greenid-option-border-width solid @greenid-option-border-colour;
+          }
+
+          // Style the select buttons
+          .fc-option-buttons {
+            .fc-button {
+              width: 100%;
+            }
+          }
+
+          // Green Id specific stylings
           .fc-greenid-verification-packages {
             margin-top: 30px;
-
-            .fc-col {
-              min-height: @greenid-min-height;
-              border-radius: 0;
-              border: @greenid-option-border-width @greenid-option-border-colour solid;
-
-              .fc-content-content {
-                padding: @greenid-package-content-padding;
-              }
-            }
-
-            .fc-content-desc {
-              margin: @greenid-option-content-margin;
-            }
 
             .progress {
               margin: 20px 0 30px 0;
 
               .progress-bar-success {
                 background: @success-background-color
-              }
-            }
-
-            .fc-content-title {
-              padding: @greenid-content-title-padding;
-              margin-bottom: @greenid-field-spacing;
-              font-weight: normal;
-              border-bottom: @greenid-option-border-width solid @greenid-option-border-colour;
-            }
-
-            // Style the select buttons
-            .fc-option-buttons {
-              .fc-button {
-                width: 100%;
               }
             }
 
