@@ -1,5 +1,40 @@
+// General styles
+#nav {
+  .powered-by {
+    position: absolute;
+    right: 50px;
+    left: auto;
+    top: 50%;
+  }
+}
+
+#loading-bar-top {
+  .bar {
+    background: @success-background-color;
+  }
+}
+
+// Formcorp form
 #formcorp-form {
   .reset();
+
+  // Hide the initial state
+  display: none;
+
+  .fc-modal {
+    display: none;
+  }
+
+  // Show the loaded state
+  &.fc-form-loaded {
+    display: block;
+
+    .fc-modal {
+      &::before, &.fc-show {
+        display: block;
+      }
+    }
+  }
 
   p, h1, h2, h3, h4, div.alert {
     margin-bottom: @special-element-margin-bottom;
@@ -77,11 +112,11 @@
 
         /* Field label */
         .fc-fieldcontainer {
-          &> label {
+          & > label {
             font-weight: normal;
             margin: @field-label-padding;
 
-            &>.fc-help-link {
+            & > .fc-help-link {
               background: @field-help-background;
               color: @field-help-color;
               padding: @field-help-padding;
@@ -121,6 +156,11 @@
               float: left;
               width: @email-verification-box-inline-width;
               margin-right: @email-verification-separator-width;
+            }
+
+            .fc-btn {
+              background: @success-background-color;
+              color: @success-font-color;
             }
 
             .fc-verify-email-button, .fc-send-email {
