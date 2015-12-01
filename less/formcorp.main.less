@@ -1,10 +1,21 @@
 // General styles
 #nav {
   .powered-by {
-    position: absolute;
-    right: 50px;
-    left: auto;
-    top: 50%;
+    display: none;
+
+    & when (@show-powered-by = true) {
+      position: absolute;
+      right: 50px;
+      left: auto;
+      top: 50%;
+      display: block !important;
+    }
+  }
+
+  a.logo:first-child {
+    background: @logo-css 0 50%;
+    height: @logo-height;
+    width: @logo-width;
   }
 }
 
