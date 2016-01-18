@@ -280,13 +280,15 @@
             }
 
             &.loading {
-              input[type="text"] {
+              input[type="text"],
+              input[type="password"] {
                 background: url(images/ball-triangle.svg) no-repeat right 12px top 8px;
               }
             }
 
             &.error {
-              input[type="text"] {
+              input[type="text"],
+              input[type="password"] {
                 border: 1px solid @error-background-color;
               }
             }
@@ -476,7 +478,8 @@
 
         /* Field input types */
         input.fc-fieldinput {
-          &[type="text"] {
+          &[type="text"],
+          &[type="password"] {
             border: 1px solid @input-border-color;
             border-radius: @input-text-border-radius;
             padding: @input-text-padding;
