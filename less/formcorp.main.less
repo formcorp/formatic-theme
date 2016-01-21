@@ -256,10 +256,12 @@
         }
 
         // E-mail verification
-        &.fc-field-emailVerification {
+        &.fc-field-emailVerification,
+        &.fc-field-smsVerification {
           // In line verification
           .fc-verify-inline {
-            .fc-verify-email-input-code {
+            .fc-verify-email-input-code,
+            .fc-verify-sms-input-code {
               float: left;
               width: @email-verification-box-inline-width;
               margin-right: @email-verification-separator-width;
@@ -270,7 +272,10 @@
               color: @success-font-color;
             }
 
-            .fc-verify-email-button, .fc-send-email {
+            .fc-verify-email-button,
+            .fc-send-email,
+            .fc-verify-sms-button,
+            .fc-send-sms {
               float: left;
               margin: 0 @email-verification-separator-width 0 0;
             }
