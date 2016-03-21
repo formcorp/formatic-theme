@@ -35,6 +35,15 @@
   .fc-modal {
     display: none;
   }
+  
+  // Remove the rounded corners on the loading
+  .fc-loading-screen {
+    border-radius: 0;
+    
+    .fc-loading-halo {
+      border-radius: 10px;
+    }
+  }
 
   // Show the loaded state
   &.fc-form-loaded {
