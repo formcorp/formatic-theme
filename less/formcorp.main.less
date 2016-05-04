@@ -35,11 +35,11 @@
   .fc-modal {
     display: none;
   }
-  
+
   // Remove the rounded corners on the loading
   .fc-loading-screen {
     border-radius: 0;
-    
+
     .fc-loading-halo {
       border-radius: 10px;
     }
@@ -765,6 +765,16 @@
           border-radius: 0;
           min-width: @pagination-button-min-width;
         }
+      }
+
+      .fc-security-error {
+        background-color: @serverside-error-bg-color;
+        border-color: @serverside-error-border-color;
+        color: @serverside-error-font-color;
+        padding: @serverside-error-padding;
+        margin-bottom: @serverside-error-margin-bottom;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
       }
 
       /* Previous page button */
